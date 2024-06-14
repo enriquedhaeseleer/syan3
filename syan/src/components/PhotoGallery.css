@@ -1,0 +1,107 @@
+/* src/components/PhotoGallery.css */
+
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    min-height: 100vh; /* Set minimum height to fill the entire viewport height */
+    overflow: auto; /* Enable scrolling if content exceeds screen size */
+    margin: 0;
+    background-color: #f0f0f0; /* Example background color */
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%; /* Ensure grid takes full width of its container */
+    max-width: 100%; /* Ensure grid does not exceed container width */
+}
+
+.photo-item {
+    width: calc(25% - 20px); /* Four items per row */
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+    .photo-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+.fullscreen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1100;
+}
+
+    .close-button:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+.prev-button,
+.next-button {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: black;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1100;
+}
+
+.prev-button {
+    left: 20px;
+}
+
+.next-button {
+    right: 20px;
+}
+
+    .prev-button:hover,
+    .next-button:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
